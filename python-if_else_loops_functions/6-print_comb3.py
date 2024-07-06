@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-for x in range (0 ,10)
-   for j in range (x + 1, 10)
-     print(f"{i}{j}, ", end="")
-print(f"99\n")     
+for i in range(10):
+  for j in range(i + 1, 10):
+    print("{}{}".format(i, j), end=", ")
+print("99\n")
