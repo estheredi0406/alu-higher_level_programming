@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-import sys
-# prints the summation of all its numeric command line arguments
+from sys import argv
 if __name__ == "__main__":
-    count = len(sys.argv)
+    count = len(argv)
     count -= 1
-    result = 0
+    arg1 = "argument:"
+    arg2 = "arguments:"
     if count == 0:
-        print("{}".format(count))
+        print("{} arguments.".format(count))
     else:
-        for i in range(1, len(sys.argv)):
-            result += int(sys.argv[i])
-        print("{}".format(result))
+        print("{} {}".format(count, arg1 if count == 1 else arg2))
+        for i in range(1, len(argv)):
+            print("{}: {}".format(i, argv[i]))
