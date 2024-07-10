@@ -15,4 +15,4 @@ def safe_print_list_integers(my_list=[], x=0):
             count += 1
             real_value += 1
     print()
-    return count - real_value
+    return count - real_value 
