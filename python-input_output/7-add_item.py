@@ -10,6 +10,11 @@ import sys
 from 5_save_to_json_file import save_to_json_file
 from 6_load_from_json_file import load_from_json_file
 
+"""
+    Main function to execute the script's functionality.
+    Collects command-line arguments, stores them in a list, and saves this list to a file.
+    """
+
 
 def main():
     """
