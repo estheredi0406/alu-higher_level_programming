@@ -5,6 +5,7 @@ Defines a Student class with attributes for first_name, last_name, and age.
 Includes a method to_json for serializing the instance into a formatted string representation.
 """
 
+
 class Student:
     """
     Represents a student with attributes for first_name, last_name, and age.
@@ -25,17 +26,5 @@ class Student:
     
     def to_json(self):
         """
-        Retrieves a formatted string representation of the Student instance.
-        
-        Returns:
-        - str: A formatted string representing the student's information.
-        """
-        result = []
-        for key, value in self.__dict__.items():
-            result.append(f"{key} => {value} / <class '{type(value).__name__}'>")
-        return "\n".join(result)
-
-# Example usage
-student_instance = Student('Tom', 'Smith', 89)
-formatted_output = student_instance.to_json()
-print(formatted_output)
+        Return a dic representation of a student instance """
+        return self.__dict__
