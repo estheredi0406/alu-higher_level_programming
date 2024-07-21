@@ -1,21 +1,29 @@
 #!/usr/bin/python3
-# This script loads a Python object from a JSON file
-
+# -*- coding: utf-8 -*-
+"""
+A simple utility to load JSON data from a file into a Python object.
+"""
 
 import json
 
 
 def load_from_json_file(filename):
     """
-    Reads a JSON file and returns the corresponding Python object.
-    
+    Reads a JSON file and returns its contents as a Python object (typically a dictionary).
+
     Parameters:
-        filename (str): The name of the JSON file to read.
-        
+    - filename (str): The path to the JSON file.
+
     Returns:
-        Any: The Python object represented by the JSON file content.
+    - dict: The parsed JSON content as a Python dictionary.
     """
-    # Open the file in read mode ('r') with UTF-8 encoding
-    with open(filename, 'r', encoding='utf-8') as file:
-        # Parse the JSON file content into a Python object
-        return json.load(file)
+    # Open the file using the 'with' statement to ensure proper resource management
+    with open(filename, 'r') as file:
+        # Read the entire content of the file
+        content = file.read()
+        
+        # Parse the JSON string into a Python object
+        obj = json.loads(content)
+        
+        # Return the parsed object
+        return obj

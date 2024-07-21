@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-# This script collects command-line arguments,
-# combines them with existing items from a JSON file,
-# and saves the updated list back to the file.
+"""
+This module demonstrates how to collect command-line
+arguments, combine them with existing items from a JSON file,
+and save the updated list back to the file.
+It showcases the use of JSON serialization and deserialization in Python.
+"""
 
 
 import sys
