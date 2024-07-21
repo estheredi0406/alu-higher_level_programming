@@ -4,7 +4,8 @@
 
 def append_write(filename="", text=""):
     """
-    Appends a string to the end of a file, creating the file if it doesn't exist.
+    Appends a string to the end of a file,
+    creating the file if it doesn't exist.
 
     Parameters:
         filename (str): The name of the file to append to.
@@ -17,4 +18,3 @@ def append_write(filename="", text=""):
     with open(filename, "a", encoding='utf-8') as file:
         # Write the text to the file and return the number of characters written
         return file.write(text)
-
