@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
+
 
 """
 Defines a Student class with attributes for first_name, last_name, and age.
@@ -23,6 +23,10 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
+
+        """
+    Retrives a dic reprsentation of the student instance.
+    """
     
     def to_json(self, attrs=None):
         """
