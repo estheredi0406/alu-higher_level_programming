@@ -19,4 +19,4 @@ def save_to_json_file(my_obj, filename):
     with open(filename, 'w', encoding='utf-8') as file:
         # Serialize the Python object to a JSON-formatted
         # string and write it to the file
-        json.dump(my_obj, file, ensure_ascii=False, indent=4
+        json.dump(my_obj, file, ensure_ascii=False, indent=4)
