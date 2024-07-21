@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 """
 Defines a Student class with attributes for first_name, last_name, and age.
 Includes methods to_json for serializing the instance into a dictionary, optionally filtering attributes,
-and reload_from_json for replacing all attributes of the Student instance based on a provided dictionary.
 """
+
+
 
 class Student:
     """
@@ -22,7 +22,9 @@ class Student:
         """
         self.first_name = first_name
         self.last_name = last_name
-        self.age = age 
+        self.age = age
+
+
     def to_json(self, attrs=None):
         """
         Retrieves a dictionary representation of the Student instance, optionally filtering attributes.
