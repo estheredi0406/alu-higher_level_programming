@@ -1,12 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
-
 """
 Defines a Student class with attributes for first_name, last_name, and age.
-Includes a method to_json for serializing the instance into a JSON-compatible dictionary.
+Includes a method to_json for serializing the instance into a formatted string representation.
 """
-
 
 class Student:
     """
@@ -28,17 +25,17 @@ class Student:
     
     def to_json(self):
         """
-        Retrieves a dictionary representation of the Student instance.
+        Retrieves a formatted string representation of the Student instance.
         
         Returns:
-        - dict: A dictionary representing the student's information.
+        - str: A formatted string representing the student's information.
         """
-        return {
-            'first_name': self.first_name,
-            'last_name': self.last_name,
-            'age': self.age
-        }
+        result = []
+        for key, value in self.__dict__.items():
+            result.append(f"{key} => {value} / <class '{type(value).__name__}'>")
+        return "\n".join(result)
 
 # Example usage
-student_instance = Student('John', 'Doe', 22)
-print(student_instance.to_json())
+student_instance = Student('Tom', 'Smith', 89)
+formatted_output = student_instance.to_json()
+print(formatted_output)
