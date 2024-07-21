@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 #another one
 
-
-def class_to_json(obj):
-    """
+"""
     Converts an instance of a class into a JSON-compatible dictionary.
 
     Parameters:
@@ -12,6 +10,14 @@ def class_to_json(obj):
     Returns:
     - dict: A dictionary representing the object's state, ready for JSON serialization.
     """
+
+
+def class_to_json(obj):
+    """
+    Converts an instance of a class into a JSON-compatible dictionary.
+
+    """
+
     result = {}
 
     # Check if obj is an instance of a custom class
