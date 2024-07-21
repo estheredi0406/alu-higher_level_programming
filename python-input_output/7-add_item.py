@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # This script collects command-line arguments,
 # combines them with existing items from a JSON file,
 # and saves the updated list back to the file.
