@@ -16,5 +16,6 @@ def append_write(filename="", text=""):
     """
     # Open the file in append mode ('a') with UTF-8 encoding
     with open(filename, "a", encoding='utf-8') as file:
-        # Write the text to the file and return the number of characters written
+        # Write the text to the file and return
+        #the number of characters written
         return file.write(text)
