@@ -1,1 +1,1 @@
-This is the reademe file for the tests 
+This is the readem file for the tests direcoty
