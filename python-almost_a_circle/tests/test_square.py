@@ -1,37 +1,40 @@
-#!/usr/bin/python3
-
 
 import unittest
 from square import Square
 
 class TestSquare(unittest.TestCase):
-    def test_square_init(self):
+
+    def setUp(self):
+        # Reset state before each test
+        Square._Base__nb_objects = 0
+
+    def test_square_id_auto(self):
+        s1 = Square(1)
+        s2 = Square(1)
+        self.assertEqual(s1.id + 1, s2.id)
+
+    def test_square_id_given(self):
+        s1 = Square(1, id=89)
+        self.assertEqual(s1.id, 89)
+
+    def test_square_invalid_size(self):
+        with self.assertRaises(ValueError):
+            Square(-1)
         s = Square(1)
-        self.assertEqual(s.width, 1)
-        self.assertEqual(s.height, 1)
-        self.assertEqual(s.x, 0)
-        self.assertEqual(s.y, 0)
+        with self.assertRaises(ValueError):
+            s.size = -1
 
-    def test_square_str(self):
-        s = Square(5, 2, 3, 9)
-        self.assertEqual(str(s), "[Square] (9) 2/3 - 5")
+    def test_to_dictionary(self):
+        s1 = Square(10, 2, 1, 1)
+        self.assertEqual(s1.to_dictionary(), {'id': 1, 'size': 10, 'x': 2, 'y': 1})
 
-    def test_square_to_dictionary(self):
-        s = Square(10, 2, 1, 9)
-        self.assertEqual(s.to_dictionary(), {
-            'id': s.id,
-            'size': 10,
-            'x': 2,
-            'y': 1
-        })
+    def test_update(self):
+        s1 = Square(10, 2, 1, 1)
+        s1.update(89)
+        self.assertEqual(s1.id, 89)
+        s1.update(size=4)
+        self.assertEqual(s1.size, 4)
 
-    def test_square_update_args(self):
-        s = Square(10)
-        s.update(89)
-        self.assertEqual(s.id, 89)
-
-    def test_square_update_kwargs(self):
-        s = Square(10)
-        s.update(id=89, size=1)
-        self.assert
+if __name__ == '__main__':
+    unittest.main()
 
