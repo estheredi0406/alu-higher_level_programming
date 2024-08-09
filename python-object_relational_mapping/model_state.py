@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-This module defines the State model, which is used to represent a state in a MySQL database.
+This module defines the State model, which is used to represent a state 
+in a MySQL database.
 
-The State model inherits from SQLAlchemy's Base and links to the MySQL table 'states'.
-It includes the following attributes:
+The State model inherits from SQLAlchemy's Base and links to the MySQL 
+table 'states'. It includes the following attributes:
 - id: An integer that serves as the primary key.
 - name: A string representing the name of the state.
 
-The module uses SQLAlchemy's ORM to map the State class to the 'states' table in the database.
+The module uses SQLAlchemy's ORM to map the State class to the 'states' 
+table in the database.
 """
 
 from sqlalchemy import Column, Integer, String
@@ -26,3 +28,4 @@ class State(Base):
     __tablename__ = "states"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
+
