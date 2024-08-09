@@ -1,6 +1,14 @@
 #!/usr/bin/python3
-# Defines a State model.
-# Inherits from SQLAlchemy Base and links to the MySQL table states.
+"""
+This module defines the State model, which is used to represent a state in a MySQL database.
+
+The State model inherits from SQLAlchemy's Base and links to the MySQL table 'states'.
+It includes the following attributes:
+- id: An integer that serves as the primary key.
+- name: A string representing the name of the state.
+
+The module uses SQLAlchemy's ORM to map the State class to the 'states' table in the database.
+"""
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
