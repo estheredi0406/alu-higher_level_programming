@@ -11,6 +11,12 @@ from model_state import Base, State
 
 if __name__ == "__main__":
     # Create an engine that connects to the MySQL database
+    if len(argv) != 5:
+        print("Usage: ./10-model_state_my_get.py <mysql username> "
+              "<mysql password> <database name> <state name>")
+        exit(1)
+
+    # Create an engine that connects to the MySQL database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
                            argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
