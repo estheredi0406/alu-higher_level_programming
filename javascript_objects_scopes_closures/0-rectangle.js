@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-class Rectangle {
-  // Empty class for now
-}
-
-const r1 = new Rectangle();
-console.log(r1);
+module.exports = class Rectangle {
+	constructor (w, h) {
+	 this.width = w;
+	 this.height = h;
+        }
+};
